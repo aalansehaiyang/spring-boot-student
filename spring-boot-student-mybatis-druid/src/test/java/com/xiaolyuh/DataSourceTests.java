@@ -12,7 +12,7 @@ import org.springframework.test.context.junit4.SpringRunner;
 import javax.sql.DataSource;
 
 @RunWith(SpringRunner.class)
-@SpringBootTest
+@SpringBootTest(classes = SpringBootStudentMybatisDruidApplication.class)
 public class DataSourceTests {
 
     @Autowired
