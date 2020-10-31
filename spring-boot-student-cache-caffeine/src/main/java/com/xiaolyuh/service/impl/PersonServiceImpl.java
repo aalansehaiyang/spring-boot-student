@@ -23,8 +23,12 @@ public class PersonServiceImpl implements PersonService {
     @Autowired
     PersonRepository personRepository;
 
+    /**
+     * value：缓存key的前缀。
+     * key：缓存key的后缀。
+     */
     @Override
-    @CachePut(value = "people", key = "#person.id")
+    @CachePut(value = "people_", key = "#person.id")
     public Person save(Person person) {
         Person p = personRepository.save(person);
         logger.info("为id、key为:" + p.getId() + "数据做了缓存");
